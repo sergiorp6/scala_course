@@ -9,7 +9,7 @@ Once we're inside SBT, we can open an Scala REPL just typing `console`.
 ##Functions
 
 In order to view the syntax of a function, we're going to create a function
-that receives an Int as a parameter and returns this value incremented by 1.
+that receives an `Int` as a parameter and returns this value incremented by 1.
 
 Here we have the example:
 
@@ -35,7 +35,7 @@ def sum(value: Int = 5): Int = value + 1
 
 In this chapter of this course, we'll see two kind of classes: standard classes and case classes
 
-We're going to declare a class Animal with two parameters:
+We're going to declare a `class Animal` with two parameters:
 
 ```scala
 class Animal(name: String, weigth: Double) {
@@ -43,7 +43,7 @@ class Animal(name: String, weigth: Double) {
 }
 ```
 
-In this case, we have an instance of Animal, but we cannot access to the values of name or weigth,
+In this case, we have an instance of `Animal`, but we cannot access to the values of name or weigth,
 so we have to implement his getters:
 
 ```scala
@@ -77,9 +77,8 @@ More simple and less code, isn't it?
 As you could see at the slides, Scala is a very typed language with lots of
 types, and everything is an object with a type.
 
-To see type safeting in Scala we're going to declare a variable of type Int
-and consider to overwrite it with an String:
-
+To see type safe in Scala we're going to declare a variable of type `Int`
+and consider to overwrite it with an `String`:
 ```scala
 var ourNumber: Int = 5
 
