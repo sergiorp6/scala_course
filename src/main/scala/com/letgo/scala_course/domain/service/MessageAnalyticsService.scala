@@ -8,7 +8,7 @@ class MessageAnalyticsService {
     messages.count(_.userName == userName)
   }
 
-  def groupByUserName(messages: Seq[UserMessage]): Map[UserName, Seq[Message]] = {
+  def groupByUserNameFirstApproach(messages: Seq[UserMessage]): Map[UserName, Seq[Message]] = {
 
     var map: Map[UserName, Seq[Message]] = Map()
 
@@ -21,5 +21,13 @@ class MessageAnalyticsService {
       }
     })
     map
+  }
+
+  def groupByUserName(messages: Seq[UserMessage]): Map[UserName, Seq[Message]] = {
+    messages.groupBy(message => {
+      message.userName
+    }).map(userMessageMap => {
+      userMessageMap._1 -> userMessageMap._2.map(userMessage => userMessage.message)
+    })
   }
 }
